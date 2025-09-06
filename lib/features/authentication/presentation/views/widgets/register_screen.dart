@@ -6,49 +6,61 @@ import 'package:fit_fusion/features/authentication/presentation/views/widgets/cu
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({super.key});
+class Registerscreen extends StatefulWidget {
+  const Registerscreen({super.key});
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<Registerscreen> createState() => _RegisterscreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
-  final TextEditingController loginEmailController = TextEditingController();
+class _RegisterscreenState extends State<Registerscreen> {
+  final TextEditingController registerEmailController = TextEditingController();
 
-  final TextEditingController loginPasswordController = TextEditingController();
+  final TextEditingController registerPasswordController =
+      TextEditingController();
 
   final bool isLoading = false;
   @override
   Widget build(BuildContext context) {
-    GlobalKey<FormState> signInFormKey = GlobalKey();
+    GlobalKey<FormState> registerFormKey = GlobalKey();
 
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.white),
+          onPressed: () {
+            context.go(AppRouter.kLoginScreen);
+          },
+        ),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Form(
-            key: signInFormKey,
+            key: registerFormKey,
             child: Column(
               children: [
-                SizedBox(height: 200),
-                FittedBox(
-                  fit: BoxFit.none,
-                  child: Image.asset(Assets.imagesFitFusionLogo),
-                ),
-                SizedBox(height: 20),
-                Text("Welcome back", style: AppStyle.styleSemiBod24),
-                SizedBox(height: 12),
+                SizedBox(height: 260),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
                     children: [
+                      Text("Register", style: AppStyle.styleSemiBod24),
+                      SizedBox(height: 20),
                       CustomTextFormField(
-                        controller: loginEmailController,
+                        controller: registerEmailController,
+                        hintText: "Username",
+                      ),
+                      SizedBox(height: 20),
+
+                      CustomTextFormField(
+                        controller: registerEmailController,
                         hintText: "Email",
                       ),
                       SizedBox(height: 20),
                       CustomTextFormField(
-                        controller: loginPasswordController,
+                        controller: registerPasswordController,
                         hintText: "Password",
                       ),
                       SizedBox(height: 20),
@@ -61,20 +73,18 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                               )
                             : Text(
-                                "Login",
+                                "Register",
                                 textAlign: TextAlign.center,
                                 style: AppStyle.styleMedium16,
                               ),
-                        onPressed: () {
-                          context.go(AppRouter.khomescreen);
-                        },
+                        onPressed: () {},
                       ),
                       SizedBox(height: 8),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Don't have an account?",
+                            "Already have an account?",
                             style: AppStyle.styleRegular16.copyWith(
                               color: Colors.grey,
                               fontSize: 14,
@@ -83,10 +93,10 @@ class _LoginScreenState extends State<LoginScreen> {
 
                           GestureDetector(
                             onTap: () {
-                              context.go(AppRouter.kRegisterScreen);
+                              context.go(AppRouter.kLoginScreen);
                             },
                             child: Text(
-                              "Register",
+                              "Login",
                               style: AppStyle.styleRegular16.copyWith(
                                 color: Colors.grey,
                                 fontSize: 14,
