@@ -14,17 +14,18 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      validator: (value) {
-        if (value == null || value.trim().isEmpty) {
-          return "Please Enter value in the field";
-        } else {
-          return null;
-        }
-      },
 
+      // validator: (value) {
+      //   if (value == null || value.trim().isEmpty) {
+      //     return "Please Enter value in the field";
+      //   } else {
+      //     return null;
+      //   }
+      // },
       decoration: InputDecoration(
         filled: true,
         enabledBorder: inputBorder(),
+        fillColor: Color(0xff302938),
 
         focusedBorder: inputBorder(),
         hintText: hintText,
@@ -35,7 +36,7 @@ class CustomTextFormField extends StatelessWidget {
 
   OutlineInputBorder inputBorder() {
     return OutlineInputBorder(
-      borderSide: BorderSide(color: Colors.white),
+      borderSide: BorderSide(color: Colors.transparent),
 
       borderRadius: BorderRadius.circular(10),
     );

@@ -5,15 +5,15 @@ void main() {
   runApp(const FitFusion());
 }
 
-
 class FitFusion extends StatelessWidget {
-  const FitFusion
-({super.key});
+  const FitFusion({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
+      theme: ThemeData.dark(),
+      debugShowCheckedModeBanner: false,
       routerConfig: AppRouter.router,
-    ) ; 
+    );
   }
 }

@@ -2,24 +2,22 @@ import 'package:flutter/material.dart';
 // import 'package:resturant_app/core/utils/app_style.dart';
 
 class CustomTextButton extends StatelessWidget {
-  const CustomTextButton({super.key, this.onPressed , required this.widgt});
+  const CustomTextButton({super.key, this.onPressed, required this.widgt});
   final Function()? onPressed;
   // final String text;
-  final Widget widgt ;
+  final Widget widgt;
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
+    return GestureDetector(
+      onTap: onPressed,
       child: AspectRatio(
-        aspectRatio: 3.6 / 0.7,
+        aspectRatio: 6.5,
         child: Container(
           decoration: BoxDecoration(
-            color: Color(0xffE82933),
-            borderRadius: BorderRadius.circular(70),
+            color: Color(0xff8021DE),
+            borderRadius: BorderRadius.circular(10),
           ),
-          child: Center(
-            child: widgt
-          ),
+          child: Center(child: widgt),
         ),
       ),
     );
