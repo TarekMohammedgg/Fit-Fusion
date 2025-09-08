@@ -50,6 +50,16 @@ class _HomeviewbodyState extends State<Homeviewbody> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.fitness_center),
+            label: 'Exercices',
+          ),
+        ],
+        selectedItemColor: Color(0xff973ec2),
+      ),
     );
   }
 }
