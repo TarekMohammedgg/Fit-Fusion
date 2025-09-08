@@ -1,5 +1,6 @@
 import 'package:fit_fusion/features/home/presentation/views/widgets/Customgridscrollview.dart';
 import 'package:fit_fusion/features/home/presentation/views/widgets/custombottomnavbar.dart';
+import 'package:fit_fusion/features/home/presentation/views/widgets/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fit_fusion/core/utils/app_styler.dart';
 import 'package:fit_fusion/features/home/presentation/views/widgets/category_bar.dart';
@@ -15,6 +16,7 @@ class HomeViewBody extends StatefulWidget {
 
 class _HomeViewBodyState extends State<HomeViewBody> {
   Set<String> filters = {};
+
   int _selectedIndex = 0;
 
   @override
@@ -27,6 +29,20 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     setState(() {
       _selectedIndex = index;
     });
+  }
+
+  List<Widget> get _screens {
+    var list = [
+      HomeScreen(filters: filters),
+
+      const Center(
+        child: Text(
+          'Exercises Page',
+          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        ),
+      ),
+    ];
+    return list;
   }
 
   @override
@@ -50,21 +66,9 @@ class _HomeViewBodyState extends State<HomeViewBody> {
           ),
         ],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: CustomScrollView(
-          slivers: <Widget>[
-            SliverToBoxAdapter(
-              child: CategoryBar(
-                onFilterChanged: (value) {
-                  setState(() => filters = value);
-                },
-              ),
-            ),
-            CustomSliverGridView(filters: filters),
-          ],
-        ),
-      ),
+
+      body: _screens[_selectedIndex],
+
       bottomNavigationBar: CustomBottomNavBar(
         selectedIndex: _selectedIndex,
         onTap: _onNavItemTapped,
