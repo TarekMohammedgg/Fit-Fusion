@@ -1,9 +1,7 @@
-import 'package:fit_fusion/features/home/presentation/views/widgets/Customgridscrollview.dart';
 import 'package:fit_fusion/features/home/presentation/views/widgets/custombottomnavbar.dart';
 import 'package:fit_fusion/features/home/presentation/views/widgets/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:fit_fusion/core/utils/app_styler.dart';
-import 'package:fit_fusion/features/home/presentation/views/widgets/category_bar.dart';
 import 'package:fit_fusion/features/home/presentation/views/widgets/exercise_model.dart';
 
 class HomeViewBody extends StatefulWidget {
