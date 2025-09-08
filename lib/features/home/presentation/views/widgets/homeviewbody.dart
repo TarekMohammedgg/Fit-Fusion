@@ -1,11 +1,25 @@
 import 'package:fit_fusion/core/utils/app_styler.dart';
 import 'package:fit_fusion/features/home/presentation/views/widgets/Customgridscrollview.dart';
+import 'package:fit_fusion/features/home/presentation/views/widgets/category_bar.dart';
 import 'package:fit_fusion/features/home/presentation/views/widgets/exercise_model.dart';
 import 'package:flutter/material.dart';
 
-class Homeviewbody extends StatelessWidget {
+class Homeviewbody extends StatefulWidget {
   Homeviewbody({super.key});
   static const String id = 'homepage';
+
+  @override
+  State<Homeviewbody> createState() => _HomeviewbodyState();
+}
+
+class _HomeviewbodyState extends State<Homeviewbody> {
+  Set<String> filters = {};
+
+  @override
+  void initState() {
+    super.initState();
+    filters = {ExercisFilter.All.name};
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +35,20 @@ class Homeviewbody extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: CustomScrollView(slivers: <Widget>[CustomSliverGridV()]),
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: CategoryBar(
+                onFilterChanged: (value) {
+                  setState(() {
+                    filters = value;
+                  });
+                },
+              ),
+            ),
+            CustomSliverGridView(filters: filters), 
+          ],
+        ),
       ),
     );
   }
