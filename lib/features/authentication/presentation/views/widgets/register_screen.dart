@@ -1,6 +1,5 @@
 import 'package:fit_fusion/core/utils/app_router.dart';
 import 'package:fit_fusion/core/utils/app_styler.dart';
-import 'package:fit_fusion/core/utils/assets.dart';
 import 'package:fit_fusion/features/authentication/presentation/views/widgets/custom_text_button.dart';
 import 'package:fit_fusion/features/authentication/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
