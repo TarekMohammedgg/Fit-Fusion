@@ -13,9 +13,15 @@ class Homeviewbody extends StatefulWidget {
 }
 
 class _HomeviewbodyState extends State<Homeviewbody> {
+  Set<String> filters = {};
+
   @override
-  bool isselected = false;
-  List<ExerciseModel> selectedItem = items;
+  void initState() {
+    super.initState();
+    filters = {ExercisFilter.All.name};
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -29,7 +35,20 @@ class _HomeviewbodyState extends State<Homeviewbody> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: CustomScrollView(slivers: <Widget>[CustomSliverGridV()]),
+        child: CustomScrollView(
+          slivers: <Widget>[
+            SliverToBoxAdapter(
+              child: CategoryBar(
+                onFilterChanged: (value) {
+                  setState(() {
+                    filters = value;
+                  });
+                },
+              ),
+            ),
+            CustomSliverGridView(filters: filters),
+          ],
+        ),
       ),
     );
   }

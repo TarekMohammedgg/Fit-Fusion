@@ -1,23 +1,50 @@
 import 'package:fit_fusion/core/utils/assets.dart';
+import 'package:fit_fusion/features/home/presentation/views/widgets/exercise_card.dart';
 import 'package:fit_fusion/features/home/presentation/views/widgets/exercise_model.dart';
 import 'package:flutter/material.dart';
 
-class CustomSliverGridV extends StatelessWidget {
-  CustomSliverGridV({super.key});
-  List<ExerciseModel> items = [
+class CustomSliverGridView extends StatefulWidget {
+  CustomSliverGridView({super.key, required this.filters});
+
+  final Set<String> filters;
+
+  @override
+  State<CustomSliverGridView> createState() => _CustomSliverGridViewState();
+}
+
+class _CustomSliverGridViewState extends State<CustomSliverGridView> {
+  final List<ExerciseModel> items = [
     ExerciseModel(
-      name: 'Bench Press',
-      description:
-          "A strength training exercise that involves pressing a weight upwards from a supine position.",
+      image: Assets.imagesExercisesGraphicsBiecps,
+      name: 'Biceps',
+      category: ExercisFilter.Pull.name,
     ),
     ExerciseModel(
-      name: 'Deadlift',
-      description:
-          "A weight training exercise where a loaded barbell is lifted off the ground to the level of the hips, then lowered back to the ground.",
+      image: Assets.imagesExercisesGraphicsChest,
+      name: 'Chest',
+      category: ExercisFilter.Push.name,
+    ),
+    ExerciseModel(
+      image: Assets.imagesExercisesGraphicsTriceps,
+      name: 'Triceps',
+      category: ExercisFilter.Push.name,
+    ),
+    ExerciseModel(
+      image: Assets.imagesExercisesGraphicsBack,
+      name: 'Back',
+      category: ExercisFilter.Pull.name,
+    ),
+    ExerciseModel(
+      image: Assets.imagesExercisesGraphicsCardio,
+      name: 'Cardio',
+      category: ExercisFilter.Legs.name,
+    ),
+    ExerciseModel(
+      image: Assets.imagesExercisesGraphicsShoulders,
+      name: 'Shoulders',
+      category: ExercisFilter.Push.name,
     ),
   ];
-  String title = '';
-  String description = '';
 
   @override
   Widget build(BuildContext context) {
@@ -35,12 +62,7 @@ class CustomSliverGridV extends StatelessWidget {
             side: const BorderSide(color: Color(0xff973ec2), width: 2),
           ),
           color: const Color(0xff242424),
-          child: Center(
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(filteredItems[index].name),
-            ),
-          ),
+          child: ExerciseCard(image: filteredItems[index].image),
         ),
         childCount: filteredItems.length,
       ),
