@@ -86,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               context.go(AppRouter.kRegisterScreen);
                             },
                             child: Text(
-                              "Register",
+                              " Register",
                               style: AppStyle.styleRegular16.copyWith(
                                 color: Colors.grey,
                                 fontSize: 14,

@@ -1,13 +1,9 @@
 class ExerciseModel {
+  final String image;
   final String name;
   final String description;
-  final String tag;
 
-  ExerciseModel({
-    required this.name,
-    required this.description,
-    required this.tag,
-  });
+  ExerciseModel({required this.name, required this.description});
 }
 
 enum ExerciseTag { push, pull, legs }
@@ -27,3 +23,5 @@ List<ExerciseModel> items = [
     tag: ExerciseTag.pull.name,
   ),
 ];
+
+enum ExercisFilter { All, Push, Pull, Legs }
