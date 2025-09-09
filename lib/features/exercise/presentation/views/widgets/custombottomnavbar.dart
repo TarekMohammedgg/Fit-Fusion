@@ -13,9 +13,19 @@ class CustomBottomNavBar extends StatelessWidget {
   static const List<BottomNavigationBarItem> _items = [
     BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
     BottomNavigationBarItem(
-      icon: Icon(Icons.fitness_center),
+      icon: Icon(Icons.fitness_center_outlined),
       label: 'Exercises',
     ),
+    BottomNavigationBarItem(
+      icon: Icon(Icons.flag_circle_outlined),
+      label: 'Goals',
+    ),
+
+    BottomNavigationBarItem(
+      icon: Icon(Icons.analytics_outlined),
+      label: 'activity',
+    ),
+    BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'settings'),
   ];
 
   @override

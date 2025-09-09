@@ -1,6 +1,6 @@
 import 'package:fit_fusion/features/authentication/presentation/views/login_screen.dart';
 import 'package:fit_fusion/features/authentication/presentation/views/widgets/register_screen.dart';
-import 'package:fit_fusion/features/home/presentation/views/homeview.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/exercise_view.dart';
 import 'package:go_router/go_router.dart';
 
 abstract class AppRouter {
@@ -15,7 +15,7 @@ abstract class AppRouter {
         path: kRegisterScreen,
         builder: (context, state) => Registerscreen(),
       ),
-      GoRoute(path: khomescreen, builder: (context, state) => Homeview()),
+      GoRoute(path: khomescreen, builder: (context, state) => ExerciseView()),
     ],
   );
 }

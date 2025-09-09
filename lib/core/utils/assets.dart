@@ -18,5 +18,6 @@ class Assets {
   static const String imagesExercisesTriceps = "assets/images/exercises/triceps.jpg";
 
   static const String imagesFitFusionLogo = "assets/images/fit_fusion_logo.png";
+  static const String imagesAvatarsPerson = "assets/images/avatars/avatar.png";
 }
 

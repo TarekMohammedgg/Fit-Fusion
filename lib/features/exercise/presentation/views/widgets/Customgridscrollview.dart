@@ -1,6 +1,6 @@
 import 'package:fit_fusion/core/utils/assets.dart';
-import 'package:fit_fusion/features/home/presentation/views/widgets/exercise_card.dart';
-import 'package:fit_fusion/features/home/presentation/views/widgets/exercise_model.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_card.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_model.dart';
 import 'package:flutter/material.dart';
 
 class CustomSliverGridView extends StatefulWidget {
@@ -56,14 +56,7 @@ class _CustomSliverGridViewState extends State<CustomSliverGridView> {
 
     return SliverGrid(
       delegate: SliverChildBuilderDelegate(
-        (context, index) => Card(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
-            side: const BorderSide(color: Color(0xff973ec2), width: 2),
-          ),
-          color: const Color(0xff242424),
-          child: ExerciseCard(image: filteredItems[index].image),
-        ),
+        (context, index) => ExerciseCard(image: filteredItems[index].image),
         childCount: filteredItems.length,
       ),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(

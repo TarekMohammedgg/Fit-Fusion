@@ -1,6 +1,6 @@
-import 'package:fit_fusion/features/home/data/models/catergory_model.dart';
-import 'package:fit_fusion/features/home/presentation/views/widgets/category_item.dart';
-import 'package:fit_fusion/features/home/presentation/views/widgets/exercise_model.dart';
+import 'package:fit_fusion/features/exercise/data/models/catergory_model.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/widgets/category_item.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_model.dart';
 import 'package:flutter/material.dart';
 
 class CategoryBar extends StatefulWidget {

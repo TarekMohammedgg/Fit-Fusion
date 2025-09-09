@@ -1,5 +1,4 @@
-import 'package:fit_fusion/core/utils/app_styler.dart';
-import 'package:fit_fusion/core/utils/assets.dart';
+
 import 'package:flutter/material.dart';
 
 class ExerciseCard extends StatelessWidget {
@@ -8,8 +7,9 @@ class ExerciseCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Image(fit: BoxFit.cover, image: AssetImage(image)),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10),
+      child: Image.asset(image),
     );
   }
 }
