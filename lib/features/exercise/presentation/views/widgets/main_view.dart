@@ -1,3 +1,4 @@
+import 'package:fit_fusion/features/Activity/presentation/activity_view.dart';
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/custombottomnavbar.dart';
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_view_body.dart';
 import 'package:fit_fusion/features/goals/presentation/views/goal_view.dart';
@@ -36,13 +37,9 @@ class _MainViewState extends State<MainView> {
       const HomeView(),
       ExerciseViewBody(filters: filters),
       GoalsView(),
-      const Center(
-        child: Text(
-          'Activity Page',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-        ),
-      ),
-      SettingsView() ,
+      ActivityView(),
+
+      SettingsView(),
     ];
     return list;
   }

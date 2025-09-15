@@ -10,7 +10,7 @@ class AvatarCard extends StatelessWidget {
     return Row(
       children: [
         // Image.asset(Assets.imagesAvatarsPerson),
-        Image.asset(Assets.imagesAvatarsPerson, height: 100, width: 100),
+        Image.asset(Assets.imagesAvatarsPerson, height: 140, width: 100),
         SizedBox(width: 10),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
