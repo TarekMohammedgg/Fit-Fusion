@@ -1,8 +1,5 @@
-import 'dart:math';
-
 import 'package:fit_fusion/core/utils/app_styler.dart';
 import 'package:fit_fusion/features/Activity/presentation/views_models/infomodel.dart';
-import 'package:fit_fusion/features/Activity/presentation/widgets/activitychart.dart';
 import 'package:fit_fusion/features/Activity/presentation/widgets/info_section.dart';
 import 'package:flutter/material.dart';
 
@@ -51,7 +48,7 @@ class activityviewbody extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 16),
-                    Expanded(child: Align(child: ActivityChart())),
+                    Expanded(child: Align(child: Container())),
                   ],
                 ),
               ),

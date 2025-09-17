@@ -10,19 +10,21 @@ class AvatarCard extends StatelessWidget {
     return Row(
       children: [
         // Image.asset(Assets.imagesAvatarsPerson),
-<<<<<<< HEAD
         TweenAnimationBuilder(
-          tween: Tween<double>(begin: 30 , end: 100),
+          tween: Tween<double>(begin: 30, end: 100),
           curve: Curves.easeInCirc,
-          duration: const Duration(seconds:2),
-          builder: (context , value , child ) {
-            return Image.asset(Assets.imagesAvatarsPerson, height: value, width: value);
-          }
+          duration: const Duration(seconds: 2),
+          builder: (context, value, child) {
+            return Image.asset(
+              Assets.imagesAvatarsPerson,
+              height: value,
+              width: value,
+            );
+          },
         ),
-=======
+
         Image.asset(Assets.imagesAvatarsPerson, height: 140, width: 100),
->>>>>>> origin/diaa_branch
-        SizedBox(width: 10),
+
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
