@@ -6,14 +6,21 @@ class ProgressIndenticator extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LinearPercentIndicator(
-      padding: EdgeInsets.zero,
-      width: MediaQuery.of(context).size.width * 0.9,
-      lineHeight: 8.0,
-      percent: 0.7,
-      barRadius: Radius.circular(12),
-      backgroundColor: Color(0xff33263B),
-      progressColor: Colors.white,
+    return TweenAnimationBuilder(
+      tween: IntTween(begin: 0, end: 70),
+      curve: Curves.easeIn,
+      duration: const Duration(seconds: 3),
+      builder: (context, value, child) {
+        return LinearPercentIndicator(
+          padding: EdgeInsets.zero,
+          width: MediaQuery.of(context).size.width * 0.9,
+          lineHeight: 8.0,
+          percent: value / 100,
+          barRadius: Radius.circular(12),
+          backgroundColor: Color(0xff33263B),
+          progressColor: Colors.white,
+        );
+      },
     );
   }
 }

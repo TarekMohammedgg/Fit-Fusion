@@ -40,7 +40,6 @@ class _RegisterscreenState extends State<Registerscreen> {
             key: registerFormKey,
             child: Column(
               children: [
-                SizedBox(height: 260),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
@@ -52,6 +51,21 @@ class _RegisterscreenState extends State<Registerscreen> {
                         hintText: "Username",
                       ),
                       SizedBox(height: 20),
+                      CustomTextFormField(
+                        controller: registerEmailController,
+                        hintText: "weight (kg)",
+                      ),
+                      SizedBox(height: 20),
+                      CustomTextFormField(
+                        controller: registerEmailController,
+                        hintText: "height (cm)",
+                      ),
+                      SizedBox(height: 20),
+                      CustomTextFormField(
+                        controller: registerEmailController,
+                        hintText: "Bounce",
+                      ),
+                      SizedBox(height: 20),
 
                       CustomTextFormField(
                         controller: registerEmailController,
@@ -61,6 +75,16 @@ class _RegisterscreenState extends State<Registerscreen> {
                       CustomTextFormField(
                         controller: registerPasswordController,
                         hintText: "Password",
+                      ),
+                      SizedBox(height: 20),
+                      CustomTextFormField(
+                        controller: registerPasswordController,
+                        hintText: "Gym Duration (optional)",
+                      ),
+                      SizedBox(height: 20),
+                      CustomTextFormField(
+                        controller: registerPasswordController,
+                        hintText: "Workout Duration (optional)",
                       ),
                       SizedBox(height: 20),
 
