@@ -3,13 +3,14 @@ import 'package:fit_fusion/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 class AvatarCard extends StatelessWidget {
-  const AvatarCard({super.key});
+  const AvatarCard({super.key, required this.userName});
+  final String userName ; 
+  
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        // Image.asset(Assets.imagesAvatarsPerson),
         TweenAnimationBuilder(
           tween: Tween<double>(begin: 30, end: 100),
           curve: Curves.easeInCirc,
@@ -22,14 +23,11 @@ class AvatarCard extends StatelessWidget {
             );
           },
         ),
-
-        Image.asset(Assets.imagesAvatarsPerson, height: 140, width: 100),
-
+        const SizedBox(width: 16),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text("Diaa Eldin", style: AppStyle.styleSemiBod24),
-            Text("Level 10 ", style: AppStyle.styleRegular14),
+            Text(userName, style: AppStyle.styleSemiBod24),
           ],
         ),
       ],
