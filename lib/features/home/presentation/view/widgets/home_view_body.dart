@@ -6,7 +6,6 @@ import 'package:fit_fusion/features/home/presentation/view/widgets/info_card.dar
 import 'package:fit_fusion/features/home/presentation/view/widgets/progress_indicator.dart';
 import 'package:flutter/material.dart';
 
-
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
 
@@ -59,30 +58,30 @@ class HomeViewBody extends StatelessWidget {
 
             Text("7,500 Steps", style: AppStyle.styleRegular14),
 
-            SizedBox(height: 20),
+            SizedBox(height: 16),
             Text("Recent Workouts", style: AppStyle.styleSemiBod24),
             SizedBox(height: 12),
             SizedBox(
-              height: 100 ,
+              height: 140,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 10,
-                itemBuilder: (context, index) =>
-                    Padding(
-                      padding: const EdgeInsets.only(right : 8.0),
-                      child: ExerciseCard(image: Assets.imagesExercisesGraphicsBack),
+                itemBuilder: (context, index) => Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: Padding(
+                    padding: const EdgeInsets.only(right: 8.0),
+
+                    child: ExerciseCard(
+                      image: Assets.imagesExercisesGraphicsBack,
                     ),
+                  ),
+                ),
               ),
             ),
+            SizedBox(height: 16),
           ],
         ),
       ),
     );
   }
 }
-
-
-
-
-
-

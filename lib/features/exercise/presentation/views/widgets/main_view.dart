@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/custom_bottom_nav_bar.dart';
+=======
+import 'package:fit_fusion/features/Activity/presentation/activity_view.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/widgets/custombottomnavbar.dart';
+>>>>>>> origin/diaa_branch
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_view_body.dart';
 import 'package:fit_fusion/features/goals/presentation/views/goal_view.dart';
 import 'package:fit_fusion/features/home/presentation/view/home_view.dart';
@@ -37,7 +42,12 @@ class _MainViewState extends State<MainView> {
       const HomeView(),
       ExerciseViewBody(filters: filters),
       GoalsView(),
+<<<<<<< HEAD
       ChartSection(),
+=======
+      ActivityView(),
+
+>>>>>>> origin/diaa_branch
       SettingsView(),
     ];
     return list;

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 
 class ExerciseCard extends StatelessWidget {
@@ -9,7 +8,12 @@ class ExerciseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
-      child: Image.asset(image),
+      child: Image.asset(
+        image,
+        width: 200, // set custom width
+        height: 200, // set custom height
+        fit: BoxFit.cover, // adjust how the image fits
+      ),
     );
   }
 }
