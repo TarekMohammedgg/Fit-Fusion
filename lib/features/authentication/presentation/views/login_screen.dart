@@ -1,3 +1,6 @@
+import 'dart:developer';
+import 'package:fit_fusion/core/constants.dart';
+import 'package:fit_fusion/core/helper/supabase_helper.dart';
 import 'package:fit_fusion/core/utils/app_router.dart';
 import 'package:fit_fusion/core/utils/app_styler.dart';
 import 'package:fit_fusion/core/utils/assets.dart';
@@ -5,6 +8,7 @@ import 'package:fit_fusion/features/authentication/presentation/views/widgets/cu
 import 'package:fit_fusion/features/authentication/presentation/views/widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -65,8 +69,33 @@ class _LoginScreenState extends State<LoginScreen> {
                                 textAlign: TextAlign.center,
                                 style: AppStyle.styleMedium16,
                               ),
-                        onPressed: () {
-                          context.go(AppRouter.khomescreen);
+                        onPressed: () async {
+                          await SupabaseHelper.login(
+                            email: loginEmailController.text,
+                            password: loginPasswordController.text,
+                          );
+
+                          final user =
+                              Supabase.instance.client.auth.currentUser;
+                          if (user == null) {
+                            log("No user is logged in");
+                            return;
+                          }
+
+                          final userId = user.id;
+                          log("Current user ID: $userId");
+
+                          final response = await Supabase.instance.client
+                              .from(Consts.kProfilesName)
+                              .select()
+                              .eq('id', userId)
+                              .maybeSingle();
+
+                          if (response != null) {
+                            context.go(AppRouter.khomescreen);
+                          } else {
+                            context.go(AppRouter.kProfileView);
+                          }
                         },
                       ),
                       SizedBox(height: 8),

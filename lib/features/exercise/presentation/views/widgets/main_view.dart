@@ -3,7 +3,7 @@ import 'package:fit_fusion/features/exercise/presentation/views/widgets/custom_b
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_model.dart';
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_view_body.dart';
 import 'package:fit_fusion/features/goals/presentation/views/goal_view.dart';
-import 'package:fit_fusion/features/home/presentation/view/home_view.dart';
+import 'package:fit_fusion/features/home/presentation/view/home_view_body.dart';
 import 'package:fit_fusion/features/settings/presentaion/view/settings_view.dart';
 import 'package:flutter/material.dart';
 
@@ -70,11 +70,7 @@ class ChartSection extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min, // يخلي العمود ياخد أقل مساحة
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const SizedBox(height: 16),
-
-            
-          ],
+          children: [const SizedBox(height: 16)],
         ),
       ),
     );

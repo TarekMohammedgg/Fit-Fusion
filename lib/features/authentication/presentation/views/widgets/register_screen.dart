@@ -1,3 +1,4 @@
+import 'package:fit_fusion/core/helper/supabase_helper.dart';
 import 'package:fit_fusion/core/utils/app_router.dart';
 import 'package:fit_fusion/core/utils/app_styler.dart';
 import 'package:fit_fusion/features/authentication/presentation/views/widgets/custom_text_button.dart';
@@ -43,28 +44,13 @@ class _RegisterscreenState extends State<Registerscreen> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16),
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Register", style: AppStyle.styleSemiBod24),
-                      SizedBox(height: 20),
-                      CustomTextFormField(
-                        controller: registerEmailController,
-                        hintText: "Username",
+                      SizedBox(height: 210,)  , 
+                      Center(
+                        child: Text("Register", style: AppStyle.styleSemiBod24),
                       ),
-                      SizedBox(height: 20),
-                      CustomTextFormField(
-                        controller: registerEmailController,
-                        hintText: "weight (kg)",
-                      ),
-                      SizedBox(height: 20),
-                      CustomTextFormField(
-                        controller: registerEmailController,
-                        hintText: "height (cm)",
-                      ),
-                      SizedBox(height: 20),
-                      CustomTextFormField(
-                        controller: registerEmailController,
-                        hintText: "Bounce",
-                      ),
+
                       SizedBox(height: 20),
 
                       CustomTextFormField(
@@ -75,16 +61,6 @@ class _RegisterscreenState extends State<Registerscreen> {
                       CustomTextFormField(
                         controller: registerPasswordController,
                         hintText: "Password",
-                      ),
-                      SizedBox(height: 20),
-                      CustomTextFormField(
-                        controller: registerPasswordController,
-                        hintText: "Gym Duration (optional)",
-                      ),
-                      SizedBox(height: 20),
-                      CustomTextFormField(
-                        controller: registerPasswordController,
-                        hintText: "Workout Duration (optional)",
                       ),
                       SizedBox(height: 20),
 
@@ -100,7 +76,11 @@ class _RegisterscreenState extends State<Registerscreen> {
                                 textAlign: TextAlign.center,
                                 style: AppStyle.styleMedium16,
                               ),
-                        onPressed: () {},
+                        onPressed: () {
+
+                          SupabaseHelper.register(email: registerEmailController.text, password: registerPasswordController.text) ; 
+                          context.go(AppRouter.kLoginScreen);
+                        },
                       ),
                       SizedBox(height: 8),
                       Row(
@@ -119,7 +99,7 @@ class _RegisterscreenState extends State<Registerscreen> {
                               context.go(AppRouter.kLoginScreen);
                             },
                             child: Text(
-                              "Login",
+                              " Login",
                               style: AppStyle.styleRegular16.copyWith(
                                 color: Colors.grey,
                                 fontSize: 14,
