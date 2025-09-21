@@ -23,7 +23,7 @@ class _MainViewState extends State<MainView> {
   @override
   void initState() {
     super.initState();
-    filters = {ExercisFilter.All.name};
+    filters = {Muscle.all.name};
   }
 
   void _onNavItemTapped(int index) {

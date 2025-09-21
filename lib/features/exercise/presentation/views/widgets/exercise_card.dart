@@ -8,7 +8,7 @@ class ExerciseCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipRRect(
       borderRadius: BorderRadius.circular(10),
-      child: Image.asset(
+      child: Image.network(
         image,
         width: 200, // set custom width
         height: 200, // set custom height

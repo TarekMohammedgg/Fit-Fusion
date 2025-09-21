@@ -81,23 +81,23 @@ class HomeViewBody extends ConsumerWidget {
                   SizedBox(height: 16),
                   Text("Recent Workouts", style: AppStyle.styleSemiBod24),
                   SizedBox(height: 12),
-                  SizedBox(
-                    height: 140,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: 10,
-                      itemBuilder: (context, index) => Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
+                  // SizedBox(
+                  //   height: 140,
+                  //   child: ListView.builder(
+                  //     scrollDirection: Axis.horizontal,
+                  //     itemCount: 10,
+                  //     itemBuilder: (context, index) => Padding(
+                  //       padding: const EdgeInsets.only(right: 8.0),
+                  //       child: Padding(
+                  //         padding: const EdgeInsets.only(right: 8.0),
 
-                          child: ExerciseCard(
-                            image: Assets.imagesExercisesGraphicsBack,
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
+                  //         child: ExerciseCard(
+                  //           image: Assets.imagesExercisesGraphicsBack,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
                   SizedBox(height: 16),
                 ],
               ),

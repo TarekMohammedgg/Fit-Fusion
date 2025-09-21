@@ -36,6 +36,9 @@ dependencies:
   percent_indicator: ^4.2.5
   supabase_flutter: ^2.10.1
   flutter_riverpod: ^3.0.0
+  app_links: ^6.1.1
+
+  
 
 dev_dependencies:
   flutter_lints: ^5.0.0

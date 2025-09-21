@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:fit_fusion/features/body_info/data/models/user_model.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_model.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:fit_fusion/core/constants.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -41,7 +42,7 @@ class SupabaseHelper {
       );
       log("the Register is success");
     } catch (e) {
-      log("the error is \$e");
+      log("the error is $e");
     }
   }
 
@@ -96,14 +97,14 @@ class SupabaseHelper {
         .eq('id', id);
   }
 
-  static Future selectAllDataRealTime(dynamic todos) async {
-    Supabase.instance.client
+  static Future<List<ExerciseModel>?> getAllExercises() async {
+    final response = await Supabase.instance.client
         .from(Consts.kDatabaseName)
-        .stream(primaryKey: ['id'])
-        .listen((event) {
-          log("the event values is : \${event.toString()}");
-          todos = event;
-        });
+        .select();
+    if (response == null) {
+      throw Exception("No exercises found");
+    }
+    return response.map((e) => ExerciseModel.fromJson(e)).toList();
   }
 
   static String? imageUrl;

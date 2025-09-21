@@ -13,14 +13,28 @@ class CategoryBar extends StatefulWidget {
 }
 
 class _CategoryBarState extends State<CategoryBar> {
-  final List<CatergoryModel> categories = [
-    CatergoryModel(title: ExercisFilter.All.name),
-    CatergoryModel(title: ExercisFilter.Push.name),
-    CatergoryModel(title: ExercisFilter.Pull.name),
-    CatergoryModel(title: ExercisFilter.Legs.name),
-  ];
+ final List<CatergoryModel> categories = [
+  CatergoryModel(title: Muscle.all.name),
+  CatergoryModel(title: Muscle.abdominals.name),
+  CatergoryModel(title: Muscle.abductors.name),
+  CatergoryModel(title: Muscle.adductors.name),
+  CatergoryModel(title: Muscle.biceps.name),
+  CatergoryModel(title: Muscle.calves.name),
+  CatergoryModel(title: Muscle.chest.name),
+  CatergoryModel(title: Muscle.forearms.name),
+  CatergoryModel(title: Muscle.glutes.name),
+  CatergoryModel(title: Muscle.hamstrings.name),
+  CatergoryModel(title: Muscle.lats.name),
+  CatergoryModel(title: Muscle.lowerBack.name),
+  CatergoryModel(title: Muscle.middleBack.name),
+  CatergoryModel(title: Muscle.neck.name),
+  CatergoryModel(title: Muscle.quadriceps.name),
+  CatergoryModel(title: Muscle.traps.name),
+  CatergoryModel(title: Muscle.triceps.name),
+];
 
-  Set<String> selectedFilters = {ExercisFilter.All.name};
+
+  Set<String> selectedFilters = {Muscle.all.name};
 
   @override
   Widget build(BuildContext context) {
@@ -40,12 +54,12 @@ class _CategoryBarState extends State<CategoryBar> {
               isSelected: isSelected,
               onSelected: (value) {
                 setState(() {
-                  if (title == ExercisFilter.All.name) {
+                  if (title == Muscle.all.name) {
                     if (value) {
-                      selectedFilters = {ExercisFilter.All.name};
+                      selectedFilters = {Muscle.all.name};
                     } else {
                       if (selectedFilters.length == 1 &&
-                          selectedFilters.contains(ExercisFilter.All.name)) {
+                          selectedFilters.contains(Muscle.all.name)) {
                         return; 
                       } else {
                         selectedFilters.remove(title);
@@ -53,12 +67,12 @@ class _CategoryBarState extends State<CategoryBar> {
                     }
                   } else {
                     if (value) {
-                      selectedFilters.remove(ExercisFilter.All.name);
+                      selectedFilters.remove(Muscle.all.name);
                       selectedFilters.add(title);
                     } else {
                       selectedFilters.remove(title);
                       if (selectedFilters.isEmpty) {
-                        selectedFilters = {ExercisFilter.All.name};
+                        selectedFilters = {Muscle.all.name};
                       }
                     }
                   }

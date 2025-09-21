@@ -1,5 +1,5 @@
 import 'package:fit_fusion/core/utils/app_styler.dart';
-import 'package:fit_fusion/features/exercise/presentation/views/widgets/Customgridscrollview.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/widgets/custom_grid_scroll_view.dart';
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/category_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,6 +12,13 @@ class ExerciseViewBody extends StatefulWidget {
 }
 
 class _ExerciseViewBodyState extends State<ExerciseViewBody> {
+  
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
