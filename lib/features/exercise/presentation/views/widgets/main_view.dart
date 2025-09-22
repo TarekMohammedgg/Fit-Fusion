@@ -1,6 +1,6 @@
 import 'package:fit_fusion/features/Activity/presentation/activity_view.dart';
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/custom_bottom_nav_bar.dart';
-import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_model.dart';
+import 'package:fit_fusion/features/exercise/data/models/exercise_model.dart';
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_view_body.dart';
 import 'package:fit_fusion/features/goals/presentation/views/goal_view.dart';
 import 'package:fit_fusion/features/home/presentation/view/home_view_body.dart';

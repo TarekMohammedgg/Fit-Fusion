@@ -1,5 +1,5 @@
 import 'package:fit_fusion/core/utils/app_styler.dart';
-import 'package:fit_fusion/features/exercise/presentation/views/widgets/custom_grid_scroll_view.dart';
+import 'package:fit_fusion/features/exercise/presentation/views/widgets/custom_sliver_list_view.dart';
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/category_bar.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +12,6 @@ class ExerciseViewBody extends StatefulWidget {
 }
 
 class _ExerciseViewBodyState extends State<ExerciseViewBody> {
-  
   @override
   void initState() {
     // TODO: implement initState
@@ -46,12 +45,12 @@ class _ExerciseViewBodyState extends State<ExerciseViewBody> {
           slivers: <Widget>[
             SliverToBoxAdapter(
               child: CategoryBar(
-                onFilterChanged: (value) {
+               onFilterChanged : (value) {
                   setState(() => widget.filters = value);
                 },
               ),
             ),
-            CustomSliverGridView(filters: widget.filters),
+            CustomSliverListView(filters: widget.filters),
           ],
         ),
       ),

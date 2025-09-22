@@ -1,5 +1,5 @@
 import 'dart:developer';
-import 'package:fit_fusion/core/constants.dart';
+import 'package:fit_fusion/core/api/constants.dart';
 import 'package:fit_fusion/core/helper/supabase_helper.dart';
 import 'package:fit_fusion/core/utils/app_router.dart';
 import 'package:fit_fusion/core/utils/app_styler.dart';

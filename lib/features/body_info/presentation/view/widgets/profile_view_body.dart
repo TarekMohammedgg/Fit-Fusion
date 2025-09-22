@@ -25,15 +25,14 @@ class _ProfileViewBodyState extends State<ProfileViewBody> {
       final profile = UserProfile(
         id: Supabase.instance.client.auth.currentUser!.id,
         username: _usernameController.text,
-      weight: double.tryParse(_weightController.text.trim()),
-      height: double.tryParse(_heightController.text.trim()),
-      bounce: double.tryParse(_bounceController.text.trim()),
-      gymDuration: int.tryParse(_gymDurationController.text.trim()),
-      workoutDuration: int.tryParse(_workoutDurationController.text.trim()),
-      createdAt: DateTime.now(),
+        weight: double.tryParse(_weightController.text.trim()),
+        height: double.tryParse(_heightController.text.trim()),
+        bounce: double.tryParse(_bounceController.text.trim()),
+        gymDuration: int.tryParse(_gymDurationController.text.trim()),
+        workoutDuration: int.tryParse(_workoutDurationController.text.trim()),
+        createdAt: DateTime.now(),
       );
       await SupabaseHelper.insertData(profile);
-
     }
   }
 

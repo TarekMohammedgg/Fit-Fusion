@@ -1,7 +1,5 @@
-
 class CatergoryModel {
-  final String title ; 
+  final String title;
 
-  CatergoryModel({required this.title}); 
-
+  CatergoryModel({required this.title});
 }

@@ -1,6 +1,6 @@
 import 'package:fit_fusion/features/exercise/data/models/catergory_model.dart';
 import 'package:fit_fusion/features/exercise/presentation/views/widgets/category_item.dart';
-import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_model.dart';
+import 'package:fit_fusion/features/exercise/data/models/exercise_model.dart';
 import 'package:flutter/material.dart';
 
 class CategoryBar extends StatefulWidget {
@@ -13,26 +13,25 @@ class CategoryBar extends StatefulWidget {
 }
 
 class _CategoryBarState extends State<CategoryBar> {
- final List<CatergoryModel> categories = [
-  CatergoryModel(title: Muscle.all.name),
-  CatergoryModel(title: Muscle.abdominals.name),
-  CatergoryModel(title: Muscle.abductors.name),
-  CatergoryModel(title: Muscle.adductors.name),
-  CatergoryModel(title: Muscle.biceps.name),
-  CatergoryModel(title: Muscle.calves.name),
-  CatergoryModel(title: Muscle.chest.name),
-  CatergoryModel(title: Muscle.forearms.name),
-  CatergoryModel(title: Muscle.glutes.name),
-  CatergoryModel(title: Muscle.hamstrings.name),
-  CatergoryModel(title: Muscle.lats.name),
-  CatergoryModel(title: Muscle.lowerBack.name),
-  CatergoryModel(title: Muscle.middleBack.name),
-  CatergoryModel(title: Muscle.neck.name),
-  CatergoryModel(title: Muscle.quadriceps.name),
-  CatergoryModel(title: Muscle.traps.name),
-  CatergoryModel(title: Muscle.triceps.name),
-];
-
+  final List<CatergoryModel> categories = [
+    CatergoryModel(title: Muscle.all.name),
+    CatergoryModel(title: Muscle.abdominals.name),
+    CatergoryModel(title: Muscle.abductors.name),
+    CatergoryModel(title: Muscle.adductors.name),
+    CatergoryModel(title: Muscle.biceps.name),
+    CatergoryModel(title: Muscle.calves.name),
+    CatergoryModel(title: Muscle.chest.name),
+    CatergoryModel(title: Muscle.forearms.name),
+    CatergoryModel(title: Muscle.glutes.name),
+    CatergoryModel(title: Muscle.hamstrings.name),
+    CatergoryModel(title: Muscle.lats.name),
+    CatergoryModel(title: Muscle.lowerBack.name),
+    CatergoryModel(title: Muscle.middleBack.name),
+    CatergoryModel(title: Muscle.neck.name),
+    CatergoryModel(title: Muscle.quadriceps.name),
+    CatergoryModel(title: Muscle.traps.name),
+    CatergoryModel(title: Muscle.triceps.name),
+  ];
 
   Set<String> selectedFilters = {Muscle.all.name};
 
@@ -45,7 +44,7 @@ class _CategoryBarState extends State<CategoryBar> {
         itemCount: categories.length,
         itemBuilder: (context, index) {
           final title = categories[index].title;
-          final isSelected = selectedFilters.contains(title); // true , false 
+          final isSelected = selectedFilters.contains(title); // true , false
 
           return Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
@@ -60,7 +59,7 @@ class _CategoryBarState extends State<CategoryBar> {
                     } else {
                       if (selectedFilters.length == 1 &&
                           selectedFilters.contains(Muscle.all.name)) {
-                        return; 
+                        return;
                       } else {
                         selectedFilters.remove(title);
                       }

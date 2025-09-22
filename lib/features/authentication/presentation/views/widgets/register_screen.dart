@@ -46,7 +46,7 @@ class _RegisterscreenState extends State<Registerscreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      SizedBox(height: 210,)  , 
+                      SizedBox(height: 210),
                       Center(
                         child: Text("Register", style: AppStyle.styleSemiBod24),
                       ),
@@ -77,8 +77,10 @@ class _RegisterscreenState extends State<Registerscreen> {
                                 style: AppStyle.styleMedium16,
                               ),
                         onPressed: () {
-
-                          SupabaseHelper.register(email: registerEmailController.text, password: registerPasswordController.text) ; 
+                          SupabaseHelper.register(
+                            email: registerEmailController.text,
+                            password: registerPasswordController.text,
+                          );
                           context.go(AppRouter.kLoginScreen);
                         },
                       ),

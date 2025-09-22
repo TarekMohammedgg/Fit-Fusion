@@ -9,8 +9,8 @@ class SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true, 
-        title: Text("Settings" , style: AppStyle.styleRegular16,) , 
+        centerTitle: true,
+        title: Text("Settings", style: AppStyle.styleRegular16),
         leading: IconButton(
           onPressed: () {},
 

@@ -18,17 +18,17 @@ class UserProfile {
     this.workoutDuration,
     this.createdAt,
   });
-  
-  
+
   factory UserProfile.fromJson(Map<String, dynamic> json) {
     return UserProfile(
       id: json['id'] as String,
       username: json['username'] as String,
-      weight: json['weight'] as double ,
-      height: json['height'] as double ,
+      weight: json['weight'] as double,
+      height: json['height'] as double,
       bounce: json['bounce'] as double,
       gymDuration: json['gym_duration'] as int,
       workoutDuration: json['workout_duration'] as int,
       createdAt: DateTime.parse(json['created_at']),
     );
-  } } 
+  }
+}
