@@ -2,9 +2,9 @@ import 'dart:developer';
 import 'dart:io';
 
 import 'package:fit_fusion/features/body_info/data/models/user_model.dart';
-import 'package:fit_fusion/features/exercise/presentation/views/widgets/exercise_model.dart';
+import 'package:fit_fusion/features/exercise/data/models/exercise_model.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:fit_fusion/core/constants.dart';
+import 'package:fit_fusion/core/api/constants.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 class SupabaseHelper {
