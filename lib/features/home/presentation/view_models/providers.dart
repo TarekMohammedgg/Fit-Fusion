@@ -28,4 +28,41 @@ final musclesProvider = FutureProvider.family<List<ExerciseModel>, String?>((
   final repo = ref.read(muscleRepositoryProvider);
   return repo.getMuscles(muscleName: muscleName);
 });
+
+class HoldNotifier extends Notifier<bool> {
+  @override
+  bool build() {
+    return false; // initial state
+  }
+
+  void toggle() {
+    state = !state;
+  }
+
+  void setHold(bool value) {
+    state = value;
+  }
+}
+
+final holdProvider = NotifierProvider<HoldNotifier, bool>(HoldNotifier.new);
+
+class selectedNotifier extends Notifier<bool> {
+  @override
+  bool build() {
+    return false; // initial state
+  }
+
+  void toggle() {
+    state = !state;
+  }
+
+  void setHold(bool value) {
+    state = value;
+  }
+}
+
+final selectedProvider = NotifierProvider<selectedNotifier, bool>(
+  selectedNotifier.new,
+);
+
 // providers.dart
