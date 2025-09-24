@@ -14,7 +14,8 @@ void main() async {
 }
 
 class FitFusion extends StatelessWidget {
-  const FitFusion({super.key});
+  
+    const FitFusion({super.key});
 
   @override
   Widget build(BuildContext context) {
